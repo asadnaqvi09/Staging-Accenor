@@ -29,7 +29,7 @@ export const siteConfig = {
     enabled: true,
     isTestNumber: true,
     phoneDisplay: "0347-5685537",
-    phoneE164: "923475685537",
+    phoneE164: "923357643144",
     defaultMessage:
       "Assalam o Alaikum! I would like to discuss accounting, tax or business requirements with Accenor Consulting.",
     getHref() {

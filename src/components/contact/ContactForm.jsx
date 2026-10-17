@@ -214,10 +214,10 @@ export function ContactForm() {
         {submitState ? (
           <div
             className={cn(
-              "rounded-xl border px-4 py-3 text-sm leading-relaxed",
+              "rounded-xl border px-4 py-3 text-sm leading-relaxed cursor-pointer",
               submitState.type === "success"
-                ? "border-[#cfe8dc] bg-accent-green-soft text-navy"
-                : "border-destructive/30 bg-destructive/10 text-destructive",
+                ? "border-[#cfe8dc] bg-accent-green-soft text-navy cursor-pointer"
+                : "border-destructive/30 bg-destructive/10 text-destructive cursor-pointer",
             )}
             role="status"
           >
@@ -228,7 +228,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex h-12 w-full items-center justify-center rounded-xl bg-brand px-5 text-sm font-semibold text-white transition hover:bg-brand-muted disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+          className="inline-flex h-12 w-full items-center justify-center rounded-xl bg-brand px-5 text-sm font-semibold text-white transition hover:bg-brand-muted disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto cursor-pointer"
         >
           {isSubmitting ? "Sending…" : "Send enquiry"}
         </button>
