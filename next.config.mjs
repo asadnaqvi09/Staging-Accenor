@@ -1,6 +1,5 @@
-/** @type {import('next').NextConfig} */
+// Next.js config — Accenor Consulting
 const nextConfig = {
-  /* config options here */
   cacheComponents: true,
   partialPrefetching: true,
   reactCompiler: true,
