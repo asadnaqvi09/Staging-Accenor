@@ -1,32 +1,90 @@
-// Client logo placeholders — real logos replace these when the owner supplies assets.
-// Keep the grid visible so the layout is ready for final assets.
-export const clients = Array.from({ length: 12 }, (_, index) => {
-  const n = String(index + 1).padStart(2, "0");
-  return {
-    id: `client-${n}`,
-    name: `CLIENT ${n}`,
-    placeholder: true,
-    logoSrc: null,
-    alt: `Client ${n} logo placeholder awaiting approval`,
-  };
-});
+// Real client logos from /public/images/clients
+export const clients = [
+  {
+    id: "achievers",
+    name: "Achievers",
+    logoSrc: "/images/clients/achievers.jpg",
+    placeholder: false,
+    alt: "Achievers logo",
+  },
+  {
+    id: "av-limousine",
+    name: "AV Limousine",
+    logoSrc: "/images/clients/av_limousine.jpg",
+    placeholder: false,
+    alt: "AV Limousine logo",
+  },
+  {
+    id: "ecom-scalers",
+    name: "Ecom Scalers",
+    logoSrc: "/images/clients/ecom$calers.jpg",
+    placeholder: false,
+    alt: "Ecom Scalers logo",
+  },
+  {
+    id: "fax",
+    name: "Fax",
+    logoSrc: "/images/clients/fax.jpg",
+    placeholder: false,
+    alt: "Fax logo",
+  },
+  {
+    id: "maher",
+    name: "Maher",
+    logoSrc: "/images/clients/maher_client.jpg",
+    placeholder: false,
+    alt: "Maher client logo",
+  },
+  {
+    id: "nordic-passage",
+    name: "Nordic Passage",
+    logoSrc: "/images/clients/nordic_passage.jpg",
+    placeholder: false,
+    alt: "Nordic Passage logo",
+  },
+  {
+    id: "revision-aps",
+    name: "Revision ApS",
+    logoSrc: "/images/clients/revision_aps.jpg",
+    placeholder: false,
+    alt: "Revision ApS logo",
+  },
+  {
+    id: "shine-travels",
+    name: "Shine Travels",
+    logoSrc: "/images/clients/shine_travels.jpg",
+    placeholder: false,
+    alt: "Shine Travels logo",
+  },
+  {
+    id: "sps",
+    name: "SPS",
+    logoSrc: "/images/clients/sps.jpg",
+    placeholder: false,
+    alt: "SPS logo",
+  },
+  {
+    id: "star",
+    name: "Star",
+    logoSrc: "/images/clients/star.jpg",
+    placeholder: false,
+    alt: "Star logo",
+  },
+];
 
-// Home shows a shorter row; full grid lives on /our-clients.
-export const homeClientLogos = clients.slice(0, 8);
+// Home carousel uses the full set (one continuous row).
+export const homeClientLogos = clients;
 
 export const clientsHero = {
   eyebrow: "Our Clients",
   title: "Businesses that trust Accenor with their financial work.",
   description:
-    "Accenor supports local and international clients with accounting, taxation, registration and advisory. Approved logos will appear here when supplied.",
+    "Accenor supports local and international clients with accounting, taxation, registration and advisory.",
   breadcrumbs: [
     { label: "Home", href: "/" },
     { label: "Our Clients" },
   ],
 };
-
-export const clientsPendingNote =
-  "Proposed · approved logos needed — placeholders shown until assets are provided";
 
 export const clientsAudiences = {
   eyebrow: "Who we support",

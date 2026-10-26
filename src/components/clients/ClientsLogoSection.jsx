@@ -1,7 +1,7 @@
 import { ClientLogoGrid } from "@/components/shared/ClientLogoGrid";
 import { Container } from "@/components/shared/Container";
 import { SectionHeader } from "@/components/shared/SectionHeader";
-import { clients, clientsPendingNote } from "@/data/clients";
+import { clients } from "@/data/clients";
 
 export function ClientsLogoSection() {
   return (
@@ -9,14 +9,13 @@ export function ClientsLogoSection() {
       <Container>
         <SectionHeader
           eyebrow="Client logos"
-          title="Placeholder grid ready for approved assets."
-          description="Real client logos will replace these cells once you supply approved artwork. No invented brands are shown."
+          title="Organisations Accenor supports."
+          description="A selection of local and international clients we work with across accounting, taxation and advisory."
         />
         <ClientLogoGrid
           className="mt-8"
           clients={clients}
-          pendingNote={clientsPendingNote}
-          gridClassName="lg:grid-cols-4"
+          gridClassName="lg:grid-cols-4 xl:grid-cols-5"
         />
       </Container>
     </section>

@@ -1,23 +1,26 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { ClientLogoGrid } from "@/components/shared/ClientLogoGrid";
+import { ClientLogoCarousel } from "@/components/home/ClientLogoCarousel";
 import { Container } from "@/components/shared/Container";
 import { SectionHeader } from "@/components/shared/SectionHeader";
-import { clientsPendingNote, homeClientLogos } from "@/data/clients";
+import { homeClientLogos } from "@/data/clients";
 
 export function ClientLogos() {
   return (
-    <section className="section-pad bg-white">
+    <section className="section-pad overflow-hidden bg-white">
       <Container>
         <SectionHeader
           eyebrow="Our clients"
           title="Trusted by businesses we support."
         />
-        <ClientLogoGrid
-          className="mt-6"
-          clients={homeClientLogos}
-          pendingNote={clientsPendingNote}
-        />
+      </Container>
+
+      {/* Full-bleed carousel row — one line, not a multi-column grid */}
+      <div className="mt-8 sm:mt-10">
+        <ClientLogoCarousel clients={homeClientLogos} />
+      </div>
+
+      <Container>
         <div className="mt-8">
           <Link
             href="/our-clients"
