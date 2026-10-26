@@ -22,13 +22,13 @@ export function SectionHeader({
           align === "center" && "sm:flex-col sm:items-center",
         )}
       >
-        <div className={cn(align === "center" && "mx-auto max-w-3xl")}>
+        <div className={cn("min-w-0", align === "center" && "mx-auto max-w-3xl")}>
           {eyebrow ? <p className="eyebrow mb-2">{eyebrow}</p> : null}
-          <h2 className="text-balance text-3xl font-bold leading-tight sm:text-4xl">
+          <h2 className="text-balance text-2xl font-bold leading-tight sm:text-3xl md:text-4xl">
             {title}
           </h2>
           {description ? (
-            <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg">
               {description}
             </p>
           ) : null}

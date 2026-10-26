@@ -10,11 +10,11 @@ export function ProcessSteps() {
           eyebrow={homeProcess.eyebrow}
           title={homeProcess.title}
         />
-        <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <ol className="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
           {homeProcess.steps.map((step, index) => (
             <li
               key={step.number}
-              className="relative rounded-2xl border border-border bg-white p-5"
+              className="relative min-w-0 rounded-2xl border border-border bg-white p-4 sm:p-5"
             >
               <span className="text-xs font-bold tracking-[0.16em] text-accent-green">
                 {step.number}
@@ -26,7 +26,7 @@ export function ProcessSteps() {
               {index < homeProcess.steps.length - 1 ? (
                 <span
                   aria-hidden
-                  className="absolute -right-2 top-1/2 hidden h-px w-4 -translate-y-1/2 bg-border lg:block"
+                  className="absolute -right-2 top-1/2 hidden h-px w-4 -translate-y-1/2 bg-border xl:block"
                 />
               ) : null}
             </li>

@@ -16,24 +16,24 @@ export function ServiceDetailHero({ service }) {
         aria-hidden
         className="pointer-events-none absolute -right-24 -top-28 size-[420px] rounded-full bg-[radial-gradient(circle,rgba(47,155,122,0.18)_0%,transparent_65%)]"
       />
-      <Container className="relative py-14 sm:py-16 lg:py-20">
+      <Container className="relative py-10 sm:py-14 lg:py-16 xl:py-20">
         <Breadcrumbs items={breadcrumbs} className="mb-5" />
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between lg:gap-12">
-          <div className="max-w-3xl">
-            <div className="flex items-start gap-4">
+        <div className="flex flex-col gap-6 sm:gap-8 lg:flex-row lg:items-start lg:justify-between lg:gap-12">
+          <div className="min-w-0 max-w-3xl">
+            <div className="flex items-start gap-3 sm:gap-4">
               <ServiceIcon
                 name={service.icon}
-                className="mt-1 size-12 shrink-0 rounded-2xl bg-accent-green-soft text-brand sm:size-14"
-                iconClassName="size-6"
+                className="mt-1 size-10 shrink-0 rounded-2xl bg-accent-green-soft text-brand sm:size-12 md:size-14"
+                iconClassName="size-5 sm:size-6"
               />
-              <div>
+              <div className="min-w-0">
                 <p className="eyebrow">Service</p>
-                <h1 className="mt-2 text-balance text-4xl font-bold leading-tight tracking-tight text-navy sm:text-5xl lg:text-[3.25rem] lg:leading-[1.15]">
+                <h1 className="mt-2 text-balance text-[1.85rem] font-bold leading-tight tracking-tight text-navy sm:text-4xl md:text-5xl lg:text-[3.25rem] lg:leading-[1.15]">
                   {service.title}
                 </h1>
               </div>
             </div>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:mt-5 sm:text-base md:text-lg">
               {service.heroDescription || service.summary}
             </p>
             {service.tags?.length ? (

@@ -12,7 +12,7 @@ export function StartingPoints() {
           eyebrow={servicesStartingPoints.eyebrow}
           title={servicesStartingPoints.title}
         />
-        <ul className="mt-10 grid gap-px overflow-hidden rounded-[10px] border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-10 grid gap-px overflow-hidden rounded-[10px] border border-border bg-border sm:grid-cols-2 xl:grid-cols-4">
           {servicesStartingPoints.items.map((item) => (
             <li
               key={item.slug}

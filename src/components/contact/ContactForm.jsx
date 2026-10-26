@@ -95,9 +95,9 @@ export function ContactForm() {
   }
 
   return (
-    <div className="rounded-2xl border border-border bg-white p-6 shadow-sm sm:p-8">
+    <div className="rounded-2xl border border-border bg-white p-5 shadow-sm sm:p-6 md:p-8">
       <p className="eyebrow">{contactFormIntro.eyebrow}</p>
-      <h2 className="mt-2 text-2xl font-bold text-navy sm:text-3xl">
+      <h2 className="mt-2 text-xl font-bold text-navy sm:text-2xl md:text-3xl">
         {contactFormIntro.title}
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">

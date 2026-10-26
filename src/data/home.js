@@ -19,6 +19,46 @@ export const homeHero = {
   ],
 };
 
+// Compact hero visual cards (illustrative — not client data).
+export const homeHeroCards = {
+  caption: "Illustrative example · not client data",
+  tax: {
+    title: "Tax Returns",
+    subtitle: "Accurate, on-time and compliant with local regulations.",
+    yearLabel: "TAX YEAR 2026",
+    filingTitle: "Income Tax Return",
+    statusBadge: "Submitted",
+    statusLabel: "Status",
+    steps: [
+      "Data Preparation",
+      "Review & Approval",
+      "Filed with Authorities",
+      "Acknowledgement Received",
+    ],
+  },
+  accounting: {
+    title: "Accounting",
+    subtitle: "Accurate records, better decisions, stronger business.",
+    overviewTitle: "Monthly Overview",
+    overviewSubtitle: "Bookkeeping & Financial Reporting",
+    currencies: "PKR · DKK · EUR · USD",
+    currencyNote: "Multi-currency support",
+    stats: [
+      { label: "Income", value: "2,480,000" },
+      { label: "Expenses", value: "1,615,000" },
+      { label: "Net", value: "865,000" },
+    ],
+    months: [
+      { label: "Jan", income: 58, expense: 42 },
+      { label: "Feb", income: 64, expense: 48 },
+      { label: "Mar", income: 72, expense: 50 },
+      { label: "Apr", income: 68, expense: 46 },
+      { label: "May", income: 80, expense: 55 },
+      { label: "Jun", income: 92, expense: 60 },
+    ],
+  },
+};
+
 export const homeAbout = {
   eyebrow: "About Accenor",
   title: "Financial support built around how your business actually works.",

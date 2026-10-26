@@ -7,14 +7,14 @@ export function RemoteSupport() {
   return (
     <section className="section-pad bg-surface-muted">
       <Container>
-        <div className="overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
+        <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm sm:rounded-3xl">
           <div className="grid lg:grid-cols-2">
-            <div className="p-8 sm:p-10 lg:p-12">
+            <div className="p-5 sm:p-8 md:p-10 lg:p-12">
               <p className="eyebrow">{homeRemote.eyebrow}</p>
-              <h2 className="mt-2 text-balance text-3xl font-bold leading-tight sm:text-4xl">
+              <h2 className="mt-2 text-balance text-2xl font-bold leading-tight sm:text-3xl md:text-4xl">
                 {homeRemote.title}
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base">
                 {homeRemote.description}
               </p>
               <ul className="mt-8 space-y-5">
@@ -38,11 +38,14 @@ export function RemoteSupport() {
               </Link>
             </div>
 
-            <div className="relative border-t border-border bg-gradient-to-br from-accent-green-soft via-white to-[#e8f1f3] p-8 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
-              <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <div className="relative border-t border-border bg-gradient-to-br from-accent-green-soft via-white to-[#e8f1f3] p-5 sm:p-8 md:p-10 lg:border-l lg:border-t-0 lg:p-12">
+              <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center sm:gap-4">
                 {homeRemote.flow.map((step, index) => (
-                  <div key={step.title} className="flex items-center gap-4">
-                    <div className="rounded-2xl border border-border bg-white px-5 py-4 text-center shadow-sm">
+                  <div
+                    key={step.title}
+                    className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:gap-4"
+                  >
+                    <div className="w-full rounded-2xl border border-border bg-white px-4 py-4 text-center shadow-sm sm:w-auto sm:px-5">
                       <p className="text-sm font-bold text-navy">{step.title}</p>
                       <p className="mt-1 text-xs text-muted-foreground">
                         {step.detail}

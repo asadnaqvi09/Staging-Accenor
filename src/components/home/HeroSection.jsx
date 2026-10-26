@@ -18,19 +18,19 @@ export function HeroSection() {
 
   return (
     <section className="hero-glow relative overflow-hidden">
-      <Container className="grid items-center gap-12 py-12 lg:grid-cols-2 lg:gap-10 lg:py-16 xl:py-20">
+      <Container className="grid items-center gap-10 py-10 sm:gap-12 sm:py-12 lg:grid-cols-2 lg:gap-8 lg:py-16 xl:gap-12 xl:py-20 2xl:gap-16">
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="max-w-xl"
+          className="mx-auto w-full max-w-xl lg:mx-0"
         >
           <p className="inline-flex items-center gap-2 rounded-full border border-border bg-white/80 px-3.5 py-1.5 text-xs font-medium text-navy/80 shadow-sm">
             <span className="size-2 rounded-full bg-accent-green" />
             {homeHero.badge}
           </p>
 
-          <h1 className="mt-5 text-balance text-4xl font-extrabold leading-[1.1] text-navy sm:text-5xl lg:text-[3.25rem]">
+          <h1 className="mt-5 text-balance text-[2rem] font-extrabold leading-[1.12] text-navy sm:text-5xl lg:text-[3.25rem] xl:text-[3.4rem]">
             {homeHero.titleLead}{" "}
             <span className="relative inline-block">
               <span className="relative z-10">{homeHero.titleHighlight}</span>
@@ -42,15 +42,15 @@ export function HeroSection() {
             {homeHero.titleRest}
           </h1>
 
-          <p className="mt-5 text-lg leading-relaxed text-navy/80 sm:text-xl">
+          <p className="mt-5 text-base leading-relaxed text-navy/80 sm:text-lg md:text-xl">
             {homeHero.sublineBefore}{" "}
-            <span className="mx-1 inline-block rounded-lg bg-brand px-2.5 py-0.5 text-base font-semibold text-white sm:text-lg">
+            <span className="mx-1 inline-block rounded-lg bg-brand px-2.5 py-0.5 text-sm font-semibold text-white sm:text-base md:text-lg">
               {homeHero.sublineHighlight}
             </span>{" "}
             {homeHero.sublineAfter}
           </p>
 
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg">
             {homeHero.description}
           </p>
 
@@ -89,7 +89,7 @@ export function HeroSection() {
           initial={reduceMotion ? false : { opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.1, ease: "easeOut" }}
-          className="relative"
+          className="relative w-full min-w-0"
         >
           <HeroDashboard />
         </motion.div>

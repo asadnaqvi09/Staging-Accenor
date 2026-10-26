@@ -32,9 +32,11 @@ export default function ContactUsPage() {
       />
       <ContactWhatsAppPanel />
       <section className="section-pad bg-white">
-        <Container className="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-10">
-          <ContactForm />
-          <div className="space-y-6">
+        <Container className="grid gap-6 sm:gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-10 xl:gap-12">
+          <div className="min-w-0">
+            <ContactForm />
+          </div>
+          <div className="min-w-0 space-y-6">
             <ContactDetails />
             <MapPlaceholder />
           </div>

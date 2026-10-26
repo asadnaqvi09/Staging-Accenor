@@ -1,136 +1,137 @@
-import { Check, FileText } from "lucide-react";
+import { Calculator, Check, FileText } from "lucide-react";
+import { homeHeroCards } from "@/data/home";
 
-const months = [
-  { label: "Apr", income: 68, expense: 48 },
-  { label: "May", income: 77, expense: 55 },
-  { label: "Jun", income: 64, expense: 52 },
-  { label: "Jul", income: 84, expense: 57 },
-  { label: "Aug", income: 92, expense: 61 },
-  { label: "Sep", income: 100, expense: 66 },
-];
-
-export function HeroDashboard() {
+function TaxReturnsCard({ data }) {
   return (
-    <div className="relative mx-auto w-full max-w-[500px]">
-      <div className="absolute -right-2 -top-3 z-20 w-[min(100%,270px)] rounded-2xl border border-border bg-white p-3 shadow-lg sm:-right-1 sm:top-0">
-        <div className="flex items-start gap-3">
-          <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-lg bg-accent-green-soft text-accent-green">
-            <FileText className="size-4" aria-hidden />
-          </span>
-          <div>
-            <p className="text-sm font-semibold text-navy">Tax year 2026</p>
-            <p className="mt-0.5 text-xs leading-snug text-muted-foreground">
-              Income tax return · in preparation
-            </p>
-            <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-muted">
-              <div className="h-full w-3/4 rounded-full bg-accent-green" />
-            </div>
-          </div>
+    <article className="rounded-2xl border border-border bg-white p-4 shadow-md shadow-navy/5 sm:p-5">
+      <div className="flex items-start gap-3">
+        <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-accent-green text-white sm:size-11">
+          <FileText className="size-4 sm:size-5" aria-hidden />
+        </span>
+        <div className="min-w-0">
+          <h3 className="text-base font-bold text-navy sm:text-lg">{data.title}</h3>
+          <p className="mt-0.5 text-xs leading-snug text-muted-foreground sm:text-[13px]">
+            {data.subtitle}
+          </p>
         </div>
       </div>
 
-      <div className="relative z-10 rounded-3xl border border-border bg-white p-5 shadow-xl shadow-navy/10 sm:p-6">
-        <div className="flex items-start justify-between gap-3">
-          <div>
-            <p className="text-base font-bold text-navy">Monthly overview</p>
-            <p className="text-sm text-muted-foreground">Sep 2026 · PKR</p>
-          </div>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-accent-green-soft px-2.5 py-1 text-xs font-semibold text-accent-green">
-            <span className="size-1.5 rounded-full bg-accent-green" />
-            Books up to date
+      <div className="mt-4 rounded-xl bg-accent-green-soft/80 p-3.5 sm:p-4">
+        <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-brand-muted">
+          {data.yearLabel}
+        </p>
+        <div className="mt-1.5 flex flex-wrap items-center gap-2">
+          <p className="text-sm font-semibold text-navy sm:text-[15px]">
+            {data.filingTitle}
+          </p>
+          <span className="inline-flex items-center gap-1 rounded-full bg-accent-green px-2 py-0.5 text-[10px] font-semibold text-white sm:text-[11px]">
+            <Check className="size-3" strokeWidth={3} aria-hidden />
+            {data.statusBadge}
           </span>
         </div>
 
-        <div className="mt-5 grid grid-cols-3 gap-2 sm:gap-3">
-          {[
-            { label: "Income", value: "2,480,000" },
-            { label: "Expenses", value: "1,615,000" },
-            { label: "Net", value: "865,000" },
-          ].map((stat) => (
+        <p className="mt-3 text-[10px] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
+          {data.statusLabel}
+        </p>
+        <ol className="mt-2 grid grid-cols-2 gap-x-2 gap-y-2 sm:grid-cols-4 sm:gap-1">
+          {data.steps.map((step) => (
+            <li
+              key={step}
+              className="flex items-start gap-1.5 text-[10px] leading-snug text-navy/85 sm:flex-col sm:items-center sm:text-center sm:text-[11px]"
+            >
+              <span className="mt-0.5 inline-flex size-4 shrink-0 items-center justify-center rounded-full bg-accent-green text-white sm:mt-0">
+                <Check className="size-2.5" strokeWidth={3} aria-hidden />
+              </span>
+              <span>{step}</span>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </article>
+  );
+}
+
+function AccountingCard({ data }) {
+  return (
+    <article className="rounded-2xl border border-border bg-white p-4 shadow-md shadow-navy/5 sm:p-5">
+      <div className="flex items-start gap-3">
+        <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-brand text-white sm:size-11">
+          <Calculator className="size-4 sm:size-5" aria-hidden />
+        </span>
+        <div className="min-w-0">
+          <h3 className="text-base font-bold text-navy sm:text-lg">{data.title}</h3>
+          <p className="mt-0.5 text-xs leading-snug text-muted-foreground sm:text-[13px]">
+            {data.subtitle}
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-4 rounded-xl bg-accent-green-soft/80 p-3.5 sm:p-4">
+        <p className="text-sm font-bold text-navy">{data.overviewTitle}</p>
+        <p className="text-xs text-muted-foreground">{data.overviewSubtitle}</p>
+        <p className="mt-2 text-[11px] font-semibold text-brand">
+          {data.currencies}
+          <span className="ml-1.5 font-normal text-muted-foreground">
+            · {data.currencyNote}
+          </span>
+        </p>
+
+        <div className="mt-3 grid grid-cols-3 gap-2">
+          {data.stats.map((stat) => (
             <div
               key={stat.label}
-              className="rounded-xl bg-surface-muted px-2.5 py-3 sm:px-3"
+              className="rounded-lg bg-white/80 px-2 py-2 text-center sm:px-2.5"
             >
-              <p className="text-[11px] text-muted-foreground sm:text-xs">
+              <p className="text-[10px] text-muted-foreground sm:text-[11px]">
                 {stat.label}
               </p>
-              <p className="mt-1 text-sm font-bold text-navy sm:text-base">
+              <p className="mt-0.5 text-xs font-bold tabular-nums text-navy sm:text-sm">
                 {stat.value}
               </p>
             </div>
           ))}
         </div>
 
-        <div className="mt-5">
-          <div className="flex h-[110px] items-end justify-between gap-1.5 sm:gap-2">
-            {months.map((month) => (
+        <div className="mt-3">
+          <div className="flex h-[72px] items-end justify-between gap-1 sm:h-[80px] sm:gap-1.5">
+            {data.months.map((month) => (
               <div
                 key={month.label}
                 className="flex flex-1 flex-col items-center gap-1"
               >
-                <div className="flex h-[90px] w-full items-end justify-center gap-0.5">
+                <div className="flex h-[56px] w-full items-end justify-center gap-0.5 sm:h-[64px]">
                   <span
-                    className="w-2 rounded-t-sm bg-brand sm:w-2.5"
+                    className="w-1.5 rounded-t-sm bg-brand sm:w-2"
                     style={{ height: `${month.income}%` }}
                   />
                   <span
-                    className="w-2 rounded-t-sm bg-[#c5d8de] sm:w-2.5"
+                    className="w-1.5 rounded-t-sm bg-[#a8c5ce] sm:w-2"
                     style={{ height: `${month.expense}%` }}
                   />
                 </div>
-                <span className="text-[10px] text-muted-foreground">
+                <span className="text-[9px] text-muted-foreground sm:text-[10px]">
                   {month.label}
                 </span>
               </div>
             ))}
           </div>
-          <div className="mt-2 flex gap-4 text-xs text-muted-foreground">
-            <span className="inline-flex items-center gap-1.5">
-              <span className="size-2.5 rounded-sm bg-brand" /> Income
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <span className="size-2.5 rounded-sm bg-[#c5d8de]" /> Expenses
-            </span>
-          </div>
-        </div>
-
-        <ul className="mt-5 space-y-2.5 border-t border-border pt-4 text-sm">
-          <li className="flex items-start gap-2">
-            <span className="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-accent-green-soft text-accent-green">
-              <Check className="size-3" strokeWidth={3} />
-            </span>
-            <span className="flex-1 text-navy/90">Bank accounts reconciled</span>
-            <span className="hidden text-xs font-semibold text-muted-foreground sm:inline">
-              PKR · DKK · EUR · USD
-            </span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-accent-green-soft text-accent-green">
-              <Check className="size-3" strokeWidth={3} />
-            </span>
-            <span className="text-navy/90">Payables and receivables reviewed</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-accent-green-soft text-accent-green">
-              <Check className="size-3" strokeWidth={3} />
-            </span>
-            <span className="text-navy/90">Management report shared</span>
-          </li>
-        </ul>
-      </div>
-
-      <div className="absolute -bottom-2 left-2 z-20 flex w-[min(100%,220px)] items-center gap-3 rounded-2xl border border-border bg-white p-3 shadow-lg sm:left-4">
-        <span className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-accent-green text-white">
-          <Check className="size-5" strokeWidth={3} />
-        </span>
-        <div>
-          <p className="text-sm font-semibold text-navy">NTN registration</p>
-          <p className="text-xs text-muted-foreground">Documents submitted</p>
         </div>
       </div>
+    </article>
+  );
+}
 
-      <p className="mt-8 text-right text-[11px] text-muted-foreground sm:mt-6">
-        Illustrative example · not client data
+export function HeroDashboard() {
+  const { tax, accounting, caption } = homeHeroCards;
+
+  return (
+    <div className="relative mx-auto w-full max-w-[360px] sm:max-w-[380px] lg:max-w-[400px] xl:max-w-[420px]">
+      <div className="flex flex-col gap-3.5 sm:gap-4">
+        <TaxReturnsCard data={tax} />
+        <AccountingCard data={accounting} />
+      </div>
+      <p className="mt-3 text-right text-[10px] text-muted-foreground sm:text-[11px]">
+        {caption}
       </p>
     </div>
   );

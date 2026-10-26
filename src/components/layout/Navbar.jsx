@@ -23,8 +23,10 @@ function Logo({ onClick }) {
         <Image src={WebLogo} alt="Accenor Consulting Logo" width={36} height={36} />
       </span>
       <span className="leading-tight">
-        <span className="block text-[15px] font-bold text-navy">Accenor</span>
-        <span className="block text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-muted">
+        <span className="block text-sm font-bold text-navy sm:text-[15px]">
+          Accenor
+        </span>
+        <span className="block text-[9px] font-semibold uppercase tracking-[0.16em] text-brand-muted sm:text-[10px]">
           Consulting
         </span>
       </span>
@@ -60,11 +62,11 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-white/95 backdrop-blur-md">
-      <Container className="flex h-[72px] items-center justify-between gap-4">
+      <Container className="flex h-16 items-center justify-between gap-3 sm:h-[72px] sm:gap-4">
         <Logo onClick={() => setOpen(false)} />
 
         <nav
-          className="hidden items-center gap-1 lg:flex"
+          className="hidden items-center gap-0.5 xl:gap-1 lg:flex"
           aria-label="Main"
         >
           {siteConfig.nav.map((item) => {
