@@ -101,7 +101,7 @@ export function HeroDashboard() {
             </span>
             <span className="flex-1 text-navy/90">Bank accounts reconciled</span>
             <span className="hidden text-xs font-semibold text-muted-foreground sm:inline">
-              PKR · DKK · EUR
+              PKR · DKK · EUR · USD
             </span>
           </li>
           <li className="flex items-start gap-2">

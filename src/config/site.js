@@ -15,7 +15,7 @@ export const siteConfig = {
     email: "accenorconsulting@gmail.com",
     addressShort: "Noor Mall, 6th Road, Rawalpindi",
     addressFull:
-      "M-95, Mezzanine Floor, Noor Mall, 6th Road, Rawalpindi, Pakistan",
+      "Noor Mall, 6th Road, Rawalpindi, Pakistan",
     // Business hours — prepared for utility bar and future pages.
     // Not heavily emphasized in Figma; included for future-ready UX.
     hoursDisplay: "Mon–Sat: 09:00 – 18:00",
@@ -28,10 +28,10 @@ export const siteConfig = {
   whatsapp: {
     enabled: true,
     isTestNumber: true,
-    phoneDisplay: "0347-5685537",
-    phoneE164: "923357643144",
+    phoneDisplay: "0332-2374725",
+    phoneE164: "923322374725",
     defaultMessage:
-      "Assalam o Alaikum! I would like to discuss accounting, tax or business requirements with Accenor Consulting.",
+      "Hi Ahsan! I would like to discuss accounting, tax or business requirements with Accenor Consulting.",
     getHref() {
       const text = encodeURIComponent(this.defaultMessage);
       return `https://wa.me/${this.phoneE164}?text=${text}`;
