@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/shared/Container";
 import { siteConfig } from "@/config/site";
@@ -13,18 +14,19 @@ export function Footer() {
       <Container className="section-pad !pb-8 !pt-14">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link href="/" className="inline-flex items-center gap-3">
-              <span className="flex size-9 items-center justify-center rounded-lg bg-brand text-sm font-bold text-white">
-                A
-              </span>
-              <span className="leading-tight">
-                <span className="block text-[15px] font-bold text-navy">
-                  Accenor
-                </span>
-                <span className="block text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-muted">
-                  Consulting
-                </span>
-              </span>
+            <Link
+              href="/"
+              className="inline-flex shrink-0 items-center no-underline"
+              aria-label="Accenor Consulting home"
+            >
+              <Image
+                src="/icons/canvas.png"
+                alt="Accenor Consulting"
+                width={200}
+                height={50}
+                className="h-7 w-auto object-contain sm:h-8 md:h-9"
+                priority
+              />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               Accounting, taxation and business consultancy for individuals,

@@ -49,7 +49,7 @@ export default function HomePage() {
         }}
       />
       <HeroSection />
-      <ServiceShortcuts />
+      {/* <ServiceShortcuts /> */}
       <ServiceTicker />
       <AboutPreview />
       <ServicesGrid />
